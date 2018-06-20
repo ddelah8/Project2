@@ -1,0 +1,126 @@
+/*Build The Quadratic Equation, be able to define the variables, find the Discriminant
+the axis of symmetry, the vertex, and the roots of the equation.
+@Author: Derek Delahoussaye
+09/17/2017
+CSC 1350
+Sec 1
+ddelah8
+project #:1
+Dr. Duncan
+ * 
+ */
+package quadraticequation3;
+
+/**
+ *
+ * @author derek
+ */
+import java.util.Scanner;
+public class QuadraticEquation3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        Scanner b = new Scanner(System.in);
+        double D,x1,x2,x3,x4,axSym,yint,root1,root2;
+        
+ Scanner reader = new Scanner(System.in);
+        
+  System.out.print("Enter the Coefficient of the Quadratic Term : ");
+        double CoefQuad = reader.nextDouble();
+        
+  System.out.print("Enter the Coefficient of the Linear Term : ");
+        double CoefLinear = reader.nextDouble();
+        
+  System.out.print("Enter the Coefficient of the Linear Term : ");
+        double ConstantCoef = reader.nextDouble();
+       
+        
+  D = (Math.pow(CoefLinear,2) - (4*CoefQuad*ConstantCoef));
+  System.out.print("D = " + (Math.pow(CoefLinear,2) - (4*CoefQuad*ConstantCoef)));
+   
+          
+     axSym = (-1*CoefLinear)/(2*CoefQuad);
+     System.out.println("Axis of Symmetry = " + axSym);
+         
+         System.out.println("Vertex =  " + axSym +","+ (Math.pow(CoefLinear,2) - (4*CoefQuad*ConstantCoef)));
+         System.out.println("y-intercept = (0," +ConstantCoef+")");
+        
+        if (CoefQuad == 0)
+        {
+            System.out.print("The equation must have a non-zero quadratic term.");
+        }
+        else
+        {
+       if (CoefQuad > 0)
+           System.out.print("Shape: Concave Upward\n");
+       else
+           System.out.print("Shape: Concave Downward\n");
+   
+    
+        
+         if (D == 0)
+        {
+       
+      x1 = (-1*CoefLinear)/(2*CoefQuad);
+         System.out.printf("Equation: %.5f^2+%.5fx+%.5f = 0.00000%n", CoefQuad, CoefLinear, ConstantCoef);
+         System.out.printf("x = {%.5f}", x1);
+        }
+        
+       else if (D > 0)
+       {
+            x1 = ((-1*CoefLinear+Math.sqrt(D))/(2*CoefQuad));
+            x2 = ((-1*CoefLinear-Math.sqrt(D))/(2*CoefQuad));
+            System.out.printf("Equation: %.5fx^2 + %.5fx + %.5f = 0.00000%n", CoefQuad, CoefLinear, ConstantCoef);
+            System.out.printf("x = {%.5f}", x1, x2);
+        }
+        
+    
+   else if (D < 0)
+   {
+      x1 = (-1*CoefLinear)/(2*CoefQuad);
+      x2 = Math.abs(Math.sqrt((Math.abs(D)))/(2*CoefQuad));
+      x3 = (-1*CoefLinear)/(2*CoefQuad);
+      x4 = Math.abs(Math.sqrt((Math.abs(D)))/(2*CoefQuad));
+      
+       }
+   else 
+   
+    if ( CoefQuad == 0)
+     System.out.print("Inavlid type. Please input a number");
+         
+       if(D > 0)
+        {
+            System.out.println("Roots are real and unequal");
+            root1 = (-1*CoefLinear + Math.sqrt(D)/(2*CoefQuad));
+            root2 = (-1*CoefLinear - Math.sqrt(D)/(2*CoefQuad));
+            System.out.println("First root is:"+root1);
+            System.out.println("Second root is:"+root2);
+        }
+        else if(D == 0)
+        {
+            System.out.println("Roots are real and equal");
+            root1 = (-1*CoefLinear + Math.sqrt(D)/(2*CoefQuad));
+            System.out.println("Root:"+root1);
+        }
+        else
+        {
+            System.out.println("Roots are imaginary");
+        }
+    }
+}  
+         
+         
+                
+        
+            
+         
+    
+         
+    
+
+}
+
+
